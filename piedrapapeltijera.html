@@ -8,31 +8,29 @@
         function aleatorio(min, max){
             return  Math.floor(Math.random() * (max - min + 1) ) + min;
         }
+
+        function eleccion(jugada){
+            let resultado = ""
+            if (jugada == 1) {
+                resultado = "Piedra";
+            } else  if (jugada == 2){
+                resultado  = "Papel";
+            } else if (jugada == 3) {
+                resultado =  "Tijera";
+            } else {
+                resultado =  "Jugada no válida";
+            }
+            return resultado;
+        }
+
         // 1 es piedra, 2 es papel y 3 es tijera
         let jugador = 0
         let pc = aleatorio(1,3);
         jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera")
+        
+        alert("Pc elige:  " + eleccion(pc))
+        alert("Tu elegiste: " + eleccion(jugador));
 
-        // Muestra la elección aleatoria del usuario
-        if (jugador == 1){
-            alert("Elegiste piedra" );
-        } else  if (jugador == 2){
-            alert("Elegiste papel")
-        } else if (jugador == 3) {
-            alert("Eligiste tijera")
-        } else {
-            alert("Opcion incorrecta, elegir entre 1, 2 o 3")
-        }
-        // Muestra la eleccion aleatoria de la PC
-        if (pc == 1){
-            alert("Pc elige piedra" );
-        } else  if (pc == 2){
-            alert("Pc elige papel")
-        } else if (pc == 3) {
-            alert("Pc elige tijera")
-        } else {
-            alert("Opcion incorrecta, elegir entre 1, 2 o 3")
-        }
         // Combate
         if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1)  || (jugador == 3 && pc == 2)){
             alert ("Ganaste!")
